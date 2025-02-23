@@ -1,0 +1,19 @@
+---
+import Layout from '../../app/layouts/Layout.astro';
+import { fetchPokemons } from '../../entities/pokemon/api/pokemon';
+import type { Pokemon } from '../../entities/pokemon/model/pokemon';
+import PokemonPage from '../../widgets/PokemonPage/PokemonPage.astro';
+const { pokemonName } = Astro.params;
+
+export async function getStaticPaths() {
+  const pokemons: Pokemon[] = await fetchPokemons(); 
+
+  return pokemons.map((pokemon) => ({
+    params: { pokemonName: pokemon.name },
+  }));
+}
+---
+
+<Layout title={`${pokemonName} — pokemon card`}>
+	<PokemonPage />
+</Layout>

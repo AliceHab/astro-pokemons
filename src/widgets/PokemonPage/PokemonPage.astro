@@ -1,0 +1,47 @@
+---
+import { fetchPokemonById } from '../../entities/pokemon/api/pokemon';
+import {PokeCard} from '../../shared/ui/PokeCard/PokeCard';
+import { Header } from '../../widgets/Header/Header';
+import type { Pokemon } from '../../entities/pokemon/model/pokemon';
+import { PokemonsList } from '../PokemonsList/PokemonsList';
+
+const { pokemonName } = Astro.params; 
+const pokemon: Pokemon = await fetchPokemonById(pokemonName!);
+---
+
+<div class="main">
+	<Header />
+	
+	<div class="pokemons-wrapper">
+      <PokemonsList activePokemonName={pokemon.name} client:load />
+
+	  <div class="pokemons-wrapper_card-wrapper"> 
+		<PokeCard
+		  name={pokemon.name}
+		  id={pokemon.id}
+		  height={pokemon.height}
+		  attack={pokemon.attack}
+		  gameCount={pokemon.gameCount}
+		  image={pokemon.imageUrl}
+		/>
+	  </div>
+	</div>
+  </div>
+  
+
+
+  <style>
+	.pokemons-wrapper {
+	  display: flex;
+	  margin-top: 54px;
+	  height: 100%;
+	  padding-bottom: 100px;
+	  box-sizing: border-box;
+	}
+  
+
+	.pokemons-wrapper_card-wrapper {
+	  width: 50%;
+	  margin-left: 12px;
+	}
+  </style>  

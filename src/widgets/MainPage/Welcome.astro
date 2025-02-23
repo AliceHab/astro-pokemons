@@ -1,0 +1,27 @@
+---
+import { Header } from '../Header/Header';
+import { PokemonsList } from '../PokemonsList/PokemonsList'
+---
+<div class="mainDiv">
+	<Header />
+	<div class="chips">
+		<PokemonsList client:load />
+		<div class="wrapper" />
+	</div>
+</div>
+  
+  <style>
+	.mainDiv {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.chips {
+		display: flex;
+		margin-bottom: 154px;
+	}
+	.wrapper {
+		width: 50%;
+	}
+  </style>
+  
