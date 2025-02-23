@@ -1,48 +1,74 @@
-# Astro Starter Kit: Basics
+# PokéAPI с использованием Astro
 
-```sh
-npm create astro@latest -- --template basics
+[![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Astro](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff&style=for-the-badge)](https://astro.build/)
+
+![image](https://i.ibb.co/d4npMn1X/1920.png)
+
+Фронтентд для данных из PokéAPI
+
+## Основные фичи
+
+- Адаптив под десктоп и мобильные;
+- Можно добавить от 2 до 6 временных отрезков;
+- При переключении временных отрезков изменяются числа и отображается соответствующий слайдер.
+
+## Запуск проекта
+
+1. Клонируйте проект
+
+```bash
+git clone git@github.com:AliceHab/astro-pokemons.git
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+2. Перейдите в директорию проекта
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+cd astro-pokemons
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+3. Установите зависимости (используя pnpm!)
 
-## 🧞 Commands
+```bash
+pnpm install
+```
 
-All commands are run from the root of the project, from a terminal:
+4. Запустите проект
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+npm run dev
+```
 
-## 👀 Want to learn more?
+5. Проект автоматически запустится на http://localhost:4321
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Структура проекта
+
+Проект разработан с использованием методологии FSD (Feature-Sliced Design).
+
+```
+src/
+│
+├── app/              // Layout и другие данные для работы проекта
+│
+├── entities/         // Логика работы с API и модели данных
+│   └── pokemon/      // Запросы к PokéAPI и хранилище состояния
+│
+├── pages/            // Страницы проекта
+│
+├── shared/           // Общие UI компоненты и стили
+│
+├── widgets/          // Крупные блоки: страницы, Header
+```
+
+## Используемые технологии
+
+- React
+- TypeScript
+- Astro
+- linaria.dev
+
+## Контакты
+
+email: maksim.efremof@gmail.com
+tg: https://t.me/areyoubaka
