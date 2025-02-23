@@ -10,7 +10,4 @@ export default defineConfig({
   vite: {
     plugins: [wyw()],
   },
-  experimental: {
-    inlineStyles: true, 
-  },
 })
